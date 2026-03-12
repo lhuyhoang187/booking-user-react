@@ -1,38 +1,71 @@
-.App {
-  text-align: center;
+/* --- HIỆU ỨNG NÚT BẤM CHUNG --- */
+.btn {
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  font-weight: bold;
+  /* Lệnh transition giúp hiệu ứng chuyển động mượt mà trong 0.3 giây */
+  transition: all 0.3s ease; 
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* 1. Nút Thêm Mới / Lưu (Màu hồng đậm) */
+.btn-primary {
+  padding: 12px 25px;
+  background-color: #ff4d6d;
+  color: white;
+  box-shadow: 0 4px 15px rgba(255, 77, 109, 0.3);
+}
+.btn-primary:hover {
+  background-color: #c9184a; /* Đổi màu đậm hơn khi rê chuột */
+  transform: translateY(-3px); /* Nổi lên trên 3px */
+  box-shadow: 0 6px 20px rgba(255, 77, 109, 0.5); /* Tăng bóng đổ */
+}
+.btn-primary:active {
+  transform: translateY(1px); /* Lún xuống khi click */
+  box-shadow: 0 2px 10px rgba(255, 77, 109, 0.2);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* 2. Nút Sửa (Màu xanh mint) */
+.btn-edit {
+  padding: 8px 18px;
+  background-color: #80ed99;
+  color: #13505b;
+  margin-right: 10px;
+}
+.btn-edit:hover {
+  background-color: #57cc99;
+  transform: translateY(-2px);
+}
+.btn-edit:active {
+  transform: translateY(1px);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+/* 3. Nút Xóa (Màu hồng cam) */
+.btn-delete {
+  padding: 8px 18px;
+  background-color: #ff758f;
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.btn-delete:hover {
+  background-color: #ff4d6d;
+  transform: translateY(-2px);
+}
+.btn-delete:active {
+  transform: translateY(1px);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* 4. Nút Hủy (Chữ gạch chân) */
+.btn-cancel {
+  width: 100%;
+  padding: 15px;
+  background-color: transparent;
+  color: #a4133c;
+  text-decoration: underline;
+}
+.btn-cancel:hover {
+  color: #590d22;
+  transform: scale(1.05); /* Phóng to lên 5% */
+}
+.btn-cancel:active {
+  transform: scale(0.95); /* Thu nhỏ lại khi click */
 }
