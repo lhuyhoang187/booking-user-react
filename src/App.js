@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './App.css'; // <-- Dòng này cực kỳ quan trọng để gọi file CSS vào!
+import './App.css'; 
 
 function App() {
   const [users, setUsers] = useState([]);
@@ -7,8 +7,9 @@ function App() {
   const [editingUser, setEditingUser] = useState({ id: '', name: '' });
   const [newName, setNewName] = useState('');
 
+  // 1. link lấy danh sách
   const fetchUsers = () => {
-    fetch('http://127.0.0.1:8000/users')
+    fetch('https://booking-admin-angular-production.up.railway.app/users')
       .then(res => res.json())
       .then(data => setUsers(data))
       .catch(err => console.error(err));
@@ -18,16 +19,18 @@ function App() {
     fetchUsers();
   }, []);
 
+  // 2.  link xóa
   const handleDelete = (id) => {
     if (window.confirm('Bạn có chắc muốn xóa thiên thần này không? ✨')) {
-      fetch(`http://127.0.0.1:8000/users/${id}`, { method: 'DELETE' })
+      fetch(`https://booking-admin-angular-production.up.railway.app/users/${id}`, { method: 'DELETE' })
         .then(() => fetchUsers());
     }
   };
 
+  // 3. link thêm mới
   const handleCreate = (e) => {
     e.preventDefault();
-    fetch('http://127.0.0.1:8000/users', {
+    fetch('https://booking-admin-angular-production.up.railway.app/users', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name: newName })
@@ -38,9 +41,10 @@ function App() {
     });
   };
 
+  // 4. link cập nhật
   const handleUpdate = (e) => {
     e.preventDefault();
-    fetch(`http://127.0.0.1:8000/users/${editingUser.id}`, {
+    fetch(`https://booking-admin-angular-production.up.railway.app/users/${editingUser.id}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name: editingUser.name })
@@ -79,7 +83,6 @@ function App() {
           <div style={{ animation: 'fadeIn 0.5s' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '30px' }}>
               <h2 style={{ color: pinkTheme.text }}>Quản Lý Thành Viên 🌷</h2>
-              {/* Dùng className thay vì style inline */}
               <button 
                 onClick={() => setCurrentView('ADD')}
                 className="btn btn-primary">
@@ -102,7 +105,6 @@ function App() {
                       <td style={{ padding: '15px 20px', fontWeight: 'bold' }}>{index + 1}</td>
                       <td style={{ padding: '15px 20px', fontWeight: '600', color: '#c9184a' }}>{user.name}</td>
                       <td style={{ padding: '15px 20px', textAlign: 'center' }}>
-                        {/* Nút Sửa và Xóa gắn class */}
                         <button 
                           onClick={() => { setEditingUser(user); setCurrentView('EDIT'); }}
                           className="btn btn-edit">
@@ -139,7 +141,6 @@ function App() {
                 />
               </div>
               
-              {/* Nút Lưu và Hủy gắn class */}
               <button type="submit" className="btn btn-primary" style={{ width: '100%', marginBottom: '15px' }}>
                 {currentView === 'ADD' ? 'Tạo Ngay ✨' : 'Cập Nhật 💖'}
               </button>
