@@ -1,0 +1,99 @@
+/* ============================================
+   BOOKING USER - DESIGN SYSTEM
+   Light theme — nền sáng, chữ tối, giữ tím & vàng làm điểm nhấn
+   ============================================ */
+
+:root {
+  /* ---- Primary Colors ---- */
+  --color-primary: #5B52E5;
+  --color-primary-light: #7C74F0;
+  --color-primary-dark: #4338CA;
+
+  /* ---- Accent / Gold ---- */
+  --color-accent: #E8940C;
+  --color-accent-light: #D97706;
+  --color-accent-dark: #B45309;
+
+  /* ---- Surfaces (tên biến giữ legacy; giá trị là palette sáng) ---- */
+  --bg-dark-900: #F0F4FA;
+  --bg-dark-800: #E8EDF6;
+  --bg-dark-700: #E2E8F0;
+  --bg-dark-600: #CBD5E1;
+  --bg-dark-500: #94A3B8;
+
+  /* ---- Text Colors ---- */
+  --text-primary: #0F172A;
+  --text-secondary: #475569;
+  --text-muted: #64748B;
+  --text-inverse: #FFFFFF;
+
+  /* ---- Success / Error ---- */
+  --color-success: #16A34A;
+  --color-success-bg: rgba(22, 163, 74, 0.1);
+  --color-error: #DC2626;
+  --color-error-bg: rgba(220, 38, 38, 0.08);
+  --color-warning: #D97706;
+  --color-info: #2563EB;
+
+  /* ---- Card / glass (trên nền sáng) ---- */
+  --glass-bg: rgba(255, 255, 255, 0.88);
+  --glass-border: rgba(15, 23, 42, 0.08);
+  --glass-shadow: 0 4px 24px rgba(15, 23, 42, 0.06);
+  --glass-blur: blur(12px);
+
+  /* ---- Shadows ---- */
+  --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 4px 12px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 8px 28px rgba(15, 23, 42, 0.1);
+  --shadow-xl: 0 16px 40px rgba(15, 23, 42, 0.12);
+  --shadow-glow: 0 4px 20px rgba(91, 82, 229, 0.22);
+
+  /* ---- Border Radius ---- */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* ---- Spacing Scale ---- */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
+  --space-4xl: 96px;
+
+  /* ---- Typography ---- */
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 2rem;
+  --font-size-4xl: 2.5rem;
+  --font-size-5xl: 3.5rem;
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+
+  /* ---- Transitions ---- */
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
+  --transition-slow: 400ms ease;
+  --transition-spring: 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* ---- Layout ---- */
+  --container-max: 1200px;
+  --header-height: 72px;
+}

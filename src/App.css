@@ -1,0 +1,13 @@
+/* App shell: layout styles chủ yếu trong pages/pages.css */
+
+.btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.btn:disabled:hover {
+  transform: none;
+  box-shadow: none;
+}
+
