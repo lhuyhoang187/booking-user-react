@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // Khởi tạo trạm phát sóng mặc định nối tới Laravel (Backend)
 const axiosClient = axios.create({
-  baseURL: 'http://localhost:8000/api', // Chú ý: Đảm bảo Backend Laravel của bạn đang chạy ở port 8000
+  baseURL: 'https://booking-backend-laravel-production.up.railway.app/api', // Chú ý: Đảm bảo Backend Laravel của bạn đang chạy ở port 8000
   headers: {
     'Content-Type': 'application/json',
   },
